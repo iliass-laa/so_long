@@ -1,4 +1,4 @@
-#include "mylib.h"
+#include "my_header.h"
 
 int	ft_strlen(char *s)
 {
@@ -129,7 +129,7 @@ char	*lecture2(struct s_next *var, char **chyata, int fd)
 	{
 		var->nlpos = find_nl(var->zoom);
 		var->len = ft_strlen(var->zoom);
-		if (var->nlpos != BUFFER_SIZE)
+		if (var->nlpos != 50)
 		{
 			var->res = ft_strjoin(var->res, var->zoom, var->nlpos + 1);
 			if (!ft_strlen(var->res))
@@ -140,10 +140,10 @@ char	*lecture2(struct s_next *var, char **chyata, int fd)
 				freedom(&var->zoom, chyata, &var->res, 1);
 			return (var->res);
 		}
-		var->res = ft_strjoin(var->res, var->zoom, BUFFER_SIZE);
+		var->res = ft_strjoin(var->res, var->zoom, 50);
 		if (!var->res)
 			return (freedom(&var->zoom, chyata, &var->res, 3), NULL);
-		(*var).readed = read(fd, var->zoom, BUFFER_SIZE);
+		(*var).readed = read(fd, var->zoom, 50);
 		var->zoom[var->readed] = 0;
 	}
 	if (ft_strlen(var->res))
@@ -167,10 +167,10 @@ char	*get_next_line(int fd)
 	struct s_next	var;
 	static char		*chyata;
 
-	var.zoom = (char *)malloc(BUFFER_SIZE + 1);
+	var.zoom = (char *)malloc(51);
 	if (!var.zoom)
 		return (freedom(&var.zoom, &chyata, &var.res, 1), NULL);
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, var.zoom, 0) != 0)
+	if (fd < 0 || 50 <= 0 || read(fd, var.zoom, 0) != 0)
 		return (freedom(&var.zoom, &chyata, &var.res, 2), NULL);
 	var.res = NULL;
 	if (ft_strlen(chyata))
@@ -182,11 +182,9 @@ char	*get_next_line(int fd)
 		else
 			return (elso2(var.res, &chyata, var.nlpos, var.zoom));
 	}
-	var.readed = read(fd, var.zoom, BUFFER_SIZE);
+	var.readed = read(fd, var.zoom, 50);
 	var.zoom[var.readed] = 0;
 	if (var.readed != 0)
 		return (lecture2(&var, &chyata, fd));
 	return (fabor(&var, &chyata, 2));
 }
-
-
