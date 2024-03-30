@@ -17,7 +17,7 @@ int	succes_path(t_checkmap *s, int y, int x)
 	int	tot;
 
 	tot = 0;
-	if (s->map[y][x] == '1' || s->map[y][x] == 'V')
+	if (s->map[y][x] == '1' || s->map[y][x] == 'V' || s->map[y][x] == 'D')
 		return (0);
 	if (s->map[y][x] == 'C')
 		tot += 1;

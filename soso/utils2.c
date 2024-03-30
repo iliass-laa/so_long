@@ -76,7 +76,8 @@ int	check_map_content(t_checkmap *s)
 		{
 			if (s->map[i][j] != '1' && s->map[i][j] != '0'
 				&& s->map[i][j] != 'C' && s->map[i][j] != 'E'
-				&& s->map[i][j] != 'P')
+				&& s->map[i][j] != 'P'
+				&& s->map[i][j] != 'D')
 				return (-1);
             lmssarndwhile(i, j, s);
 			j++;

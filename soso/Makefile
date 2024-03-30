@@ -1,8 +1,8 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-CFILES = so_long.c reading.c appear_win.c enjoy.c utils.c utils2.c
+CFILES = so_long.c reading.c appear_win.c enjoy.c utils.c utils2.c utils3.c
 OBJ = $(CFILES:.c=.o)
-NAME = exec
+NAME = so_long
 
 all : $(NAME)
 
