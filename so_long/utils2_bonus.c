@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   utils2_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilaasri <ilaasri@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_header.h"
+#include "my_header_bonus.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -76,10 +76,9 @@ int	check_map_content(t_checkmap *s)
 		{
 			if (s->map[i][j] != '1' && s->map[i][j] != '0'
 				&& s->map[i][j] != 'C' && s->map[i][j] != 'E'
-				&& s->map[i][j] != 'P'
-				&& s->map[i][j] != 'D')
+				&& s->map[i][j] != 'P' && s->map[i][j] != 'D')
 				return (-1);
-            lmssarndwhile(i, j, s);
+			lmssarndwhile(i, j, s);
 			j++;
 		}
 		i++;

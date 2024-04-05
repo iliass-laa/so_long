@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilaasri <ilaasri@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_header.h"
+#include "my_header_bonus.h"
 
 int	succes_path(t_checkmap *s, int y, int x)
 {
@@ -89,6 +89,7 @@ void	read_1_map(t_checkmap *s)
 	s->n_c = 0;
 	s->n_p = 0;
 	s->n_e = 0;
+	i = 0;
 }
 
 int	check_map(char *path, t_checkmap *str)
